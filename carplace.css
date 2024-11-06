@@ -13,6 +13,7 @@ padding και άλλων γνωρισμάτων, που καθορίζουν τ
 font θα προσθέσουμε πέρα από αυτό που δηλώνουμε στον κανόνα font-face, που δημιουργήσαμε εμείς, ένα υπαρκτό font σε περίπτωση που 
 "πέσει" το σύστημα ή υπάρχει κάποιο άλλο θέμα που δεν επιτρέπει την φόρτωση από τον δικό μας server του font, τις τιμές που θα προσθέσουμε
 σε αυτή την περίπτωση θα είναι sans-serif*/
+
 @font-face {
     font-family: "myfont";
     src: url('BPreplay/BPreplay.otf') format('otf');
@@ -20,45 +21,45 @@ font θα προσθέσουμε πέρα από αυτό που δηλώνου�
     src: url('BPreplay/BPreplayBold.otf') format('otf');
 }
 
+
 /*=================================
   ========= Mobile-Based===========
   =================================*/
 
+
 /* Στο παρακάτω media περιέχονται κανόνες για mobile.Δημιουργούμε 1 στήλη
 για την διάταξη του περιεχομένου.*/
+
+
 /* Αλλαγή- Body 
 εφαρμόζουμε μία μορφολογία για όλες τις σελίδες */
-body{
+
+body {
     /*Θεωρούμε ότι κάθε σελίδα είναι σε μορφή grid και καθορίζουμε ανάλογα τις τιμές σε header/main/footer
     και αν έχουμε και σε aside*/
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: 
-    "header"
-    "nav"
-    "aside"
-    "main"
-    "footer"
-    ;
+    grid-template-areas: "header" "nav" "aside" "main" "footer";
     /* Εδώ δηλώνουμε την μορφοποίηση όλης της σελίδας, καθορίζουμε 
-    την εικόνα/χρώμα του background*/ 
+    την εικόνα/χρώμα του background*/
     background-image: linear-gradient(to bottom right, #557788, #BEBAB7);
-        /* To background είτε χρώμα είτε εικόνας θα "καλύπτει" όλη την σελίδα από άκρο σε άκρο */
+    /* To background είτε χρώμα είτε εικόνας θα "καλύπτει" όλη την σελίδα από άκρο σε άκρο */
     background-size: cover;
-        /* Λόγω του ότι η εικόνα δεν χωρούσε ακριβώς, επιτρέπουμε την επανάληψη ώστε να καλυφθεί όλη
+    /* Λόγω του ότι η εικόνα δεν χωρούσε ακριβώς, επιτρέπουμε την επανάληψη ώστε να καλυφθεί όλη
     η σελίδα χωρίς να αλλοιωθεί η ποιότητα της φωτογραφίας.*/
     background-repeat: repeat;
     overflow-x: hidden;
-     /* Καθορίζουμε την γραμματοσειρά όλων των κειμένων στις σελίδες */
+    /* Καθορίζουμε την γραμματοσειρά όλων των κειμένων στις σελίδες */
     font-family: myfont, Fallback, sans-serif;
 }
+
 img {
     /*Δηλώνουμε το width για να είναι το πλάτος από το flex container που επιτρέπουμε στο αντικείμενο 
     να καταναλώσει είτε στο footer είτε στο header */
     width: 20%;
-        /* Στοιχίζει την εικόνα στα αριστερά του εσωτερικού του footer */
+    /* Στοιχίζει την εικόνα στα αριστερά του εσωτερικού του footer */
     position: relative;
-     /* Μέγεθος εικόνας αντίστοιχο με αυτό του header*/
+    /* Μέγεθος εικόνας αντίστοιχο με αυτό του header*/
     height: 55px;
     width: 55px;
     /* Κενό από τα αριστερά του ορίου που ορίστηκε*/
@@ -69,8 +70,11 @@ img {
     μην υπάρχει κενό*/
     padding: 15px 0px 0px;
 }
+
+
 /* Αλλαγή- Header */
-header{
+
+header {
     /* Ορίζουμε την περιοχή ως header */
     grid-area: header;
     /*Το αντικειμένο μας θα έχει την μορφή flex container το οποίο προκαλεί την μεταβολή όλων των απευθείας
@@ -83,13 +87,13 @@ header{
     position: relative;
     top: 0;
     background-color: white;
-        /* Θέτουμε το χώρο ως προς το ύψος του αντικειμένου που είναι ανάλογο των
+    /* Θέτουμε το χώρο ως προς το ύψος του αντικειμένου που είναι ανάλογο των
     αντικειμένων στο εσωτερικό του-που περικλύει*/
     height: 100%;
     align-items: center;
     /* Εμφανίζουμε μία απλή γραμμή του περιγράμματος */
     border-bottom: 2px dotted black;
-       /* Μορφοποιούμε όλα τα στοιχεία του header να είναι μαύρου χρώματος και
+    /* Μορφοποιούμε όλα τα στοιχεία του header να είναι μαύρου χρώματος και
     έντονης γραφής με ορισμένο μέγεθος- κυρίως για την ονομασία της ιστοσελίδας*/
     color: black;
     font-size: 18px;
@@ -97,14 +101,14 @@ header{
     font-family: myfont;
 }
 
-.navbar{
+.navbar {
     /* Ορίζουμε την περιόχη ως nav*/
     grid-area: nav;
     /* Το αντικείμενο τοποθετείται στην σελίδα σε σχέση με το αντικείμενο-πατέρα,
     δηλαδή ανάλογα την θέση που έχει ο footer θα τοποθετηθεί με βάση τα στοιχεία 
     right/top στο εσωτερικό του.*/
-    position:absolute;
-     /* Αλλάζουμε την απόσταση από τα δεξιά γιατί το επηρεάζουμε από το γνώρισμα width*/
+    position: absolute;
+    /* Αλλάζουμε την απόσταση από τα δεξιά γιατί το επηρεάζουμε από το γνώρισμα width*/
     top: 100%;
     left: 0;
     /*Δηλώνουμε το width για να είναι το πλάτος από το flex container που επιτρέπουμε στο αντικείμενο 
@@ -122,9 +126,12 @@ header{
     /*Ορίζουμε το z-index 1000 ώστε να εμφανίζεται μπρόστα από τις άλλες εικόνες */
     z-index: 1000;
 }
+
+
 /*Δημιουργήσαμε ένα drop menu χρησιμοποιώντας το check το όποιο τοποθετείται πίσω από το menu_icons
 ,έτσι κάνοντας κλικ εμφανίζονται οι επιλογές πλοήγησης και κλείνοντας εξαφανίζονται*/
-#check{
+
+#check {
     position: absolute;
     right: 5%;
     /* Δεν εμφανίζουμε το check ώστε να δημιουργείται η ψευδαίσθηση ότι ο χρήστης επιλέγει το μενού,
@@ -132,7 +139,7 @@ header{
     display: none;
 }
 
-.menu_icons{
+.menu_icons {
     /*Καθορίζουμε την 'απόλυτη θέση του αντικειμένου'ο οποίο δεν επηρεάζεται από τη θέση των γύρω
     στοιχείων, και μπορεί να τοποθετηθεί σε οποιαδήποτε θέση της σελίδας με βάση την παρακάτω τιμή που 
     ορίζουμε*/
@@ -141,26 +148,25 @@ header{
     background-size: auto;
 }
 
-#check:checked~.menu_icons #menu{
+#check:checked~.menu_icons #menu {
     /*Εξαφανίζεται το menu icon όταν ο χρήστης  πατάει πάνω του*/
     display: none;
 }
 
-.menu_icons #close{
+.menu_icons #close {
     /*Θέτουμε σε none κάθως το close icon θέλουμε να εμφανίζεται μόνο εάν πατηθεί*/
     display: none;
-
 }
-#check:checked~.menu_icons #close{
+
+#check:checked~.menu_icons #close {
     display: block;
-
 }
 
-#check:checked~.navbar{
-    height: 14rem ;
+#check:checked~.navbar {
+    height: 14rem;
 }
 
-.navbar>a{
+.navbar>a {
     /* Αν δεν καταφέρει να βρεί την πρώτη μορφή τότε συνεχίζει στην δεύτερη*/
     font-family: myfont, sans-serif;
     color: #0C2E3F;
@@ -174,14 +180,15 @@ header{
     /*Στοιχίζει τα αντικείμενα στο κέντρο*/
     text-align: center;
     transform: translateY(-50px);
-    /*Η αλλαγή γίνεται με ήρεμο ρυθμό και διαρκεί 3s*/ 
+    /*Η αλλαγή γίνεται με ήρεμο ρυθμό και διαρκεί 3s*/
     transition: .3s ease;
     /* Αλλάζει το μέγεθος του κειμένου από αυτό που θέσαμε παραπάνω για το header συνολικά */
     font-size: 17px;
     opacity: 0;
-
 }
-#menu,#close{
+
+#menu,
+#close {
     width: 40px;
     height: 40px;
 }
@@ -191,14 +198,15 @@ header{
     text-decoration: underline;
 }
 
-#check:checked~.navbar a{
+#check:checked~.navbar a {
     transform: translateY(0);
     transition-delay: calc(.15s * var(--i));
     opacity: 1;
 }
+
 main {
     grid-area: main;
-   /* Θέτουμε το background χρώμα λευκό/ έτσι δίνουμε την αίσθηση "επιπέδων" 
+    /* Θέτουμε το background χρώμα λευκό/ έτσι δίνουμε την αίσθηση "επιπέδων" 
     σε σχέση με το background της σελίδας. Στο εσωτερικό του rgb οι 3 πρώτοι αριθμοί 
     είναι οι αντιστοιχία του χρώματος και της "ποσότητας" που δίνει για το αποτέλεσμα
     ενώ ο 4ος αριθμός δείχνει το κατα πόση "διαφάνεια" έχει το χρώμα (>=1 δεν έχει 
@@ -210,22 +218,24 @@ main {
     border-left: 5px double rgb(0, 0, 0, 0.7);
     /* Καθορίζουμε την απόσταση των αντικειμένων στο ΕΣΩΤΕΡΙΚΟ της main ως προς την κορυφή, δεξιά/αριστερά 
     και κάτω με τις αντίστοιχες τιμές */
-    padding: 5px 70px 5px;;  
+    padding: 5px 70px 5px;
+    ;
     /*Το αντικειμένο μας θα έχει την μορφή grid container το οποίο προκαλεί την μεταβολή όλων των απευθείας
     συνδεδεμένων,σε αυτό, αντικειμένα να είναι αυτόματα grid, ακόμα και αν ανήκει σε grid το οποίο σημαίνει ότι είναι
     και το ίδιο στην ίδια "οικογένεια" ξανά ορίζουμε ότι είναι grid element ώστε να διατάξουμε το περιεχόμενο του 
     με βάση τα συγκεκριμένα γνωρίσματα του ορισμένου grid container.*/
-    display: grid; 
+    display: grid;
     /* Αυτή η ιδιότητα καθορίζει το ύψος κάθε γραμμής στο grid και κάθε στοιχείο δίνει την διαφορά με το προηγούμενο*/
     grid-template-rows: auto auto auto;
-    
 }
 
+
 /* Αλλαγή- Μορφοποίηση του εξερεύνησε - ώστε να δίνει την ψευδαίσθηση κουμπιού*/
-.button{
+
+.button {
     /* Εμφανίζεται σαν αντικείμενο block δηλαδή πιάνει όλη την γραμμή, το οποίο είναι μορφή ενός flexbox*/
     display: inline-block;
-     /* μορφοποίηση περιγράμματος */
+    /* μορφοποίηση περιγράμματος */
     width: 50%;
     box-sizing: border-box;
     border-color: #35718B;
@@ -243,11 +253,11 @@ main {
     color: #35718B;
     background-color: white;
     /* Βάζουμε την φωτογραφία στο εσωτερικό του αντικειμένου*/
-    background-image: url('searchicon.jpg');
+    background-image: url('OtherPics/searchicon.jpg');
     /* Τοποθετούμε το περιεχόμενο με απόσταση από κάθε πλευρά του border 6px */
     background-position: 5px 2.5px;
     /*Μη επανάληψη της φωτογραφίας*/
-    background-repeat: no-repeat;          
+    background-repeat: no-repeat;
 }
 
 .button:hover {
@@ -275,7 +285,7 @@ main {
 .Car_img {
     width: 100%;
     height: auto;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 .top-left {
@@ -283,12 +293,14 @@ main {
     color: #fff;
     padding: 5px;
 }
+
 .Home_img,
 .Car_img {
     width: 100%;
     height: auto;
     margin-left: 1%;
 }
+
 .top-left {
     white-space: nowrap;
     position: absolute;
@@ -296,14 +308,15 @@ main {
     left: 30%;
     color: #fff;
     padding: 5px;
-
 }
+
+
 /*FAQ*/
 
 
 /* Αλλαγή */
 
-.faq_container{
+.faq_container {
     /* Το χειριζόμαστε ως flexbox τοποθετώντας τα περιεχόμενα κατακόρυφα */
     display: flex;
     flex-direction: column;
@@ -315,7 +328,10 @@ main {
     text-align: left;
     margin-top: 1%;
 }
+
+
 /*Τίτλος του πεδίου*/
+
 .faq_container h2 {
     font-size: 1.5rem;
     justify-content: center;
@@ -323,6 +339,7 @@ main {
     margin-bottom: 9%;
     color: #0C2E3F;
 }
+
 .faq_container:hover h2 {
     text-shadow: 2px 2px 5px #35718B;
 }
@@ -335,6 +352,7 @@ summary {
     border-radius: .3em;
     font-weight: bold;
 }
+
 details>p {
     /* Τα επαναορίζουμε*/
     margin: 0;
@@ -342,10 +360,11 @@ details>p {
     text-align: justify;
     /* Καθορίζουμε το πλάτος που "καταναλώνει" το αντικειμένου σε σχέση με το πλάτος όλης της main */
     width: 90%;
-
 }
 
+
 /* Μορφοποίηση λίστας βημάτων */
+
 details>ol {
     background: rgba(53, 114, 141, 0.1);
     text-align: left;
@@ -359,8 +378,13 @@ details>ol li {
 summary:hover {
     color: rgb(53, 114, 141)
 }
+
+
 /* Αλλαγή- Μορφοποιούμε τον τίτλο και την εισαγωγική παράγραφο */
+
+
 /* Τίτλος αρχικής σελίδας */
+
 .intro>h2 {
     white-space: nowrap;
     font-weight: bold;
@@ -368,7 +392,10 @@ summary:hover {
     color: black;
     margin-top: 5%;
 }
+
+
 /*Αλλαγή- εισαγωγική παράγραφος επαναορίζουμε τα δεδόμενα που έχουμε θέσει για το p*/
+
 .intro>p {
     font-weight: 500;
     font-size: 16px;
@@ -378,17 +405,23 @@ summary:hover {
     padding: 5px 20px 5px;
     width: 90%;
 }
+
+
 /* κατά την επιλογή μεγενθύνεται το κείμενο */
+
 .intro>p:hover {
-    font-size:large;
+    font-size: large;
     font-style: oblique;
 }
 
 .intro>p::first-letter {
     initial-letter: 1.8;
 }
+
+
 /* Αλλαγή- Footer */
-footer{
+
+footer {
     /* Ορίζουμε την περιοχή ως footer*/
     grid-area: footer;
     /*Το αντικειμένο μας θα έχει την μορφή flex container το οποίο προκαλεί την μεταβολή όλων των απευθείας
@@ -396,7 +429,7 @@ footer{
     display: flex;
     flex-direction: column;
     background-color: white;
-    color:black;
+    color: black;
     /* Το  πάνω κενό που έχει το περιεχόμενο από το πλαίσιο του αντικειμένου */
     padding: 5px 0;
     /* Στοίχηση του κειμένου */
@@ -410,9 +443,12 @@ footer{
     ότι δηλαδή θα καλύπτει απόλυτα το περιεχόμενο του footer*/
     width: 100%;
     height: 100%;
-    font-family: myfont, Fallback, sans-serif; 
+    font-family: myfont, Fallback, sans-serif;
 }
+
+
 /* Καθορισμός εξαιτίας display:flex; parent element(footer) */
+
 #upper-footer {
     /* καθορίζει την θέση που τοποθετούνται μέσα στο αντικείμενο σε σχέση με τα άλλα*/
     order: 1;
@@ -431,15 +467,21 @@ footer{
     /* Κάνουμε πιο έντονα τα γράμματα */
     font-weight: bold;
 }
+
+
 /* Αλλαγή- Μορφοποιούμε τα δεδομένα τηλέφωνο και email του footer*/
+
 #middle-footer address {
     font-size: 15px;
     font-weight: normal;
-        /* Το χρησιμοποιούμε ώστε να εμφανίζονται τα στοιχεία στο εσωτερικό
+    /* Το χρησιμοποιούμε ώστε να εμφανίζονται τα στοιχεία στο εσωτερικό
         του flex αντικειμένου στην ίδια γραμμή */
     display: inline-table;
 }
+
+
 /* Αλλαγή */
+
 #middle-footer ul li {
     /* Εξαιτίας του display τα αντικείμενα της λίστας θα στοιχισθούν ανά γραμμή 
     για αυτό καθορίζουμε το κενό (10px) που ακολουθεί κάθε στοιχείο*/
@@ -458,13 +500,19 @@ footer{
     αλλιώς κατα μήκος ευθυγράμμιση*/
     align-items: stretch;
 }
+
+
 /* Στο εσωτερικό του middle-footer μορφοποιούμε τις εικόνες που αντιπροσωπεύουν τα links για τα 
     κοινωνικά δίκτυα */
+
 #middle-footer img {
     height: 25px;
     width: 25px;
 }
+
+
 /* Μορφοποιούμε τα hyperlink που βρίσκονται στο middle-footer */
+
 #middle-footer a {
     text-decoration: none;
     color: #034153;
@@ -472,7 +520,10 @@ footer{
     προηγούνται ή έπονται*/
     margin: 0 4px;
 }
+
+
 /* αφορά το hyperlink του contact us το διαφοροποιούμε διότι δεν θέλαμε να έχουμε σκιά */
+
 #middle-footer a:hover {
     text-decoration: underline;
 }
@@ -480,43 +531,49 @@ footer{
 
 /* Αλλαγή */
 
-
-.validator p{
-    padding-left: 1%; 
+.validator p {
+    padding-left: 1%;
 }
 
+
 /* επεξεργαζόμαστε τα p αντικείμενα του footer ώστε να είναι μορφολογικά όμοια*/
+
 footer p {
     margin-top: 1%;
     padding-left: 35px;
 }
+
+
 /* Αλλαγή */
+
 #lower-footer {
     /* Έτσι στοιχίζεται τελευταίο από τα στοιχεία του footer (εξαιτίας του footer που αποτελεί flex-container)*/
     order: 3;
-        /* Εμφανίζουμε την πάνω γραμμή του περιγράμματος που αντιστοιχεί στο εξής αντικείμενο*/
+    /* Εμφανίζουμε την πάνω γραμμή του περιγράμματος που αντιστοιχεί στο εξής αντικείμενο*/
     border-top: 1px solid #0C2E3F;
 }
 
+
 /*Μορφοποιούμε το το nav του footer, ώστε να διατασσόνται το ένα κάτω από το άλλο και να είναι διακριτά στον χρήστη */
-.footer_nav{
+
+.footer_nav {
     width: 37%;
     display: block;
     position: absolute;
-    right:0;
+    right: 0;
     top: 10%;
     font-weight: normal;
     overflow: hidden;
-    inline-size: 200px;    
+    inline-size: 200px;
 }
 
-.footer_nav a{   
+.footer_nav a {
     font-family: myfont, sans-serif;
     float: left;
     color: #0C2E3F;
     text-align: right;
     padding: 10px 15px;
-    text-decoration: none;    
+    text-decoration: none;
     font-size: 15px;
     letter-spacing: 1px;
 }
@@ -526,13 +583,17 @@ footer p {
     text-decoration: underline;
 }
 
+
 /* About us*/
+
 .about_us {
     /* Ορίζουμε το εσωτερικό περιεχόμενο να έχει μορφή grid προσανατολισμένη σε οριζόντια μορφοποίηση
     το οποίο μεταβάλει όλο το περιεχόμενο να ακολουθεί grid display κανόνες*/
     display: grid;
     row-gap: 10px;
 }
+
+
 /* Επεξεργαζόμαστε τον τίτλο της σελίδας αλλά επειδή χρησιμοποιούμε ένα stylesheet για όλες
 τις σελίδες όλο το περιεχόμενο είναι μέσα σε ένα αντικείμενο section για αυτό και έχουμε h2*/
 
@@ -542,19 +603,24 @@ h2 {
     /* Καθορίζουμε την απόσταση με το επόμενο αντικείμενο */
     margin-bottom: 10px;
     font-weight: bolder;
-    
 }
-.members p{
+
+.members p {
     font-size: 15px;
     text-align: justify;
     color: BLACK;
     width: 75%;
 }
+
+
 /* Μορφοποιούμε το πρώτο γράμμα της παραγράφου του "σκοπού μας" να "καταναλώνει" 2 γραμμές για 
 να είναι πιο ξεκάθαρο ότι πρόκειται για μία παράγραφο */
+
 .purpose>p::first-letter {
     initial-letter: 2;
 }
+
+
 /* Διακριτοποιούμε μορφολογικά του περιεχόμενους τίτλους από τον κεντρικό της σελίδας*/
 
 .members figcaption {
@@ -577,7 +643,7 @@ figure img[alt="Naya_avatar"],
 img[alt="Iliana_avatar"] {
     /* Στρογγυλοποιούμε το περίγραμμα, δίνοντας του σχήμα όμοιο με κύκλο */
     border-radius: 50%;
-     /* Χρωματίζουμε το περίγραμμα με εμφανή γραμμή*/
+    /* Χρωματίζουμε το περίγραμμα με εμφανή γραμμή*/
     border: 2px solid #35718B;
     /* Διαστάσεις εικόνων */
     height: 150px;
@@ -587,60 +653,62 @@ img[alt="Iliana_avatar"] {
     margin-right: 35px;
 }
 
+
 /*--------------------Rentals/Used-Cars----------------*/
+
 .suggestions>h1 {
     font-size: 23px;
     margin: 3%;
     margin-bottom: 0;
 }
+
 .suggestions>h2 {
     text-align: left;
     margin-left: 2%;
 }
+
 .suggestions {
     align-items: flex-start;
 }
+
 .suggestions>h2 a {
-        font-size: 16px;
-        text-decoration-color: #35718B;
-        color: #35718B;
+    font-size: 16px;
+    text-decoration-color: #35718B;
+    color: #35718B;
 }
 
-.rent article table .column{
+.rent article table .column {
     display: grid;
     grid-template-rows: auto auto;
-    grid-template-areas:
-    "figure"
-    "text"
-    ;
+    grid-template-areas: "figure" "text";
 }
+
 .rent article table .column figure {
-    display: flex; 
+    display: flex;
     flex-direction: column;
-    height: 100%; 
+    height: 100%;
 }
 
 .rent article table .column figure img {
     grid-area: figure;
-    flex: 1; 
-    width: 90%; 
-    object-fit: cover; 
-
+    flex: 1;
+    width: 90%;
+    object-fit: cover;
 }
 
-.rent article table .column .info{
+.rent article table .column .info {
     grid-area: text;
     font-size: 16px;
-    
-    
 }
-.rent article figcaption{
-    margin-bottom: 10px; 
+
+.rent article figcaption {
+    margin-bottom: 10px;
     font-weight: bold;
     margin-left: 0;
 }
+
 .rent article .head_info {
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
     font-size: 20px;
 }
 
@@ -687,14 +755,20 @@ img[alt="attrIconBed"] {
     font-size: 15px;
     overflow: hidden;
 }
+
 .head_info small {
     text-align: left;
     font-weight: 500;
     font-size: 15px;
     overflow: hidden;
 }
+
+
 /*-----------------Contact Form-------------*/
+
+
 /*Μορφολογία της φόρμας*/
+
 form {
     background-color: rgb(255, 255, 255, 0.9);
     /* το πλάτος που πιάνει από την σελίδα */
@@ -709,7 +783,10 @@ form {
     margin: 1% 15% 3%;
     text-align: center;
 }
+
+
 /* Επεξεργασία πλαισίου επιλογής προβλήματος */
+
 #main_issue {
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -722,21 +799,28 @@ form {
     padding: 7px 10px;
     text-align: justify;
 }
+
+
 /* Επεξεργασία πλαισίου συμπλήρωσης "Περιγραφή" */
+
 #issue_desc {
     background: none;
     width: 100%;
     margin-right: 30px;
     border-radius: 10px;
-    
 }
+
+
 /* To background στις επιλογές που δίνονται στο πρόβλημα */
+
 optgroup,
 option {
     background-color: rgba(82, 111, 189, 0.2);
 }
 
+
 /* Αλλαγή- Μορφοποίηση του εσωτερικού της φόρμας */
+
 fieldset {
     /* το παρουσιάζουμε ως ένα flex container στοιχισμένο κατακόρυφα */
     display: flex;
@@ -747,14 +831,19 @@ fieldset {
     margin-bottom: 3%;
 }
 
+
 /* Μορφοποίηση τίτλων των πεδίων της φόρμας */
+
 legend {
     font-size: 18px;
     font-style: italic;
     font-weight: bold;
     color: #0C2E3F;
 }
+
+
 /* Μορφοποίηση ζητουμένου " Άλλο Θέμα "*/
+
 #another_issue_txt {
     width: 80%;
     border-radius: 0.375rem;
@@ -765,6 +854,8 @@ legend {
     margin-top: 5px;
     font-size: 15px;
 }
+
+
 /*Αλλαγή- Οι τίτλοι των ζητουμένων/ερωτήσεων*/
 
 label {
@@ -775,7 +866,10 @@ label {
     font-size: 16px;
     padding: 0px 50px 10px;
 }
+
+
 /* τα πλαίσια του πεδίου της φόρμας "στοιχεία ενδιαφερόμενου" */
+
 .input-group input {
     width: 80%;
     border-radius: 0.375rem;
@@ -784,16 +878,21 @@ label {
     padding: 0.75rem 1rem;
     font-size: 14px;
 }
+
+
 /* ενεργοποιείται το παρακάτω όταν ο χρήστης επιλέξει ένα πεδίο*/
+
 .input-group input:focus {
     background-color: rgba(156, 161, 175, 0.1);
     border: 3px solid rgb(85, 117, 206);
 }
+
+
 /*Αλλαγή- Μορφοποίηση των κουμπιών Υποβολής/Επαναφοράς */
 
 #buttons {
     display: flex;
-     /* τα στοιχίζουμε όλα στην ίδια γραμμή */
+    /* τα στοιχίζουμε όλα στην ίδια γραμμή */
     flex-direction: row;
     /* Θέτουμε απόσταση μεταξύ των δύο στοιχείων στην ίδια γραμμή */
     column-gap: 10px;
@@ -805,9 +904,9 @@ label {
 }
 
 #buttons input {
-     /* Απόσταση του κουμπιού από τα γύρω αντικείμενα */
+    /* Απόσταση του κουμπιού από τα γύρω αντικείμενα */
     margin: 20px;
-     /* Μέγεθος του κουμπιού */
+    /* Μέγεθος του κουμπιού */
     padding: 10px;
     background-color: #0C2E3F;
     color: white;
@@ -820,21 +919,30 @@ label {
     opacity: 0.8;
     box-shadow: #0C2E3F 0px 7px 2px, #000 0px 8px 5px;
 }
+
+
 /* Την αλλαγή της μορφής όταν έχουμε το ποντίκι πάνω στο κουμπί */
+
 #buttons input:hover {
     opacity: 1;
 }
+
+
 /* Την αλλαγή της μορφής όταν το κουμπί είναι πατημένο*/
+
 #buttons input:active {
     box-shadow: #0C2E3F 0px 3px 2px, #000 0px 3px 5px;
 }
+
+
 /*-----------Categories-----------*/
+
 .categories img {
     height: 100px;
     width: 150px;
-    margin-left: 2%; 
-
+    margin-left: 2%;
 }
+
 .categories table,
 table {
     width: 100%;
@@ -844,8 +952,8 @@ table {
 .box li {
     /* Αντικαθιστούμε το προκαθορισμένο bullet point με μία εικόνα */
     list-style: square inside url("loc.jpg");
-
 }
+
 .categories th,
 .cars th {
     text-align: center;
@@ -860,18 +968,22 @@ table td {
     /* Το περιεχόμενο κάθε γραμμής θα έχει την παρακάτω θέση σε σχέση με την γραμμή */
     padding: 6px 1px 1px;
 }
+
 td a {
     text-decoration-color: #557788;
     color: #034153;
 }
+
 td a:hover {
     text-decoration: none;
     color: #2B4552;
 }
+
 th figure {
     /* Έτσι στοιχίζονται στην ίδια ευθεία*/
     display: inline-block;
 }
+
 th figcaption {
     /* Το χρησιμοποιούμε ώστε να στοιχίζεται κάτω από την εικόνα */
     display: block;
@@ -880,11 +992,13 @@ th figcaption {
     text-align: center;
     font-size: 17px;
 }
+
 .titles>td {
     text-align: center;
     font-weight: bold;
     font-size: 17px;
 }
+
 .cars td {
     text-align: center;
     font-size: 17px;
@@ -894,19 +1008,21 @@ th figcaption {
 
 /* Detailed Ads- home-rentals-219409040-details && usedcar-offers-M2859604721 */
 
-.synopsed_img ,.album-cover{
+.synopsed_img,
+.album-cover {
     /* Μέγεθος εικόνας */
-    width: 100%;  
-    height: auto; 
+    width: 100%;
+    height: auto;
     z-index: 1;
     /* Κατά το hover η αλλαγή του opacity γίνεται με ήρεμο ρυθμο και διαρκεί 5sec */
     transition: .5s ease;
     margin: 0;
 }
-.container{
-    position: relative;
 
+.container {
+    position: relative;
 }
+
 .content_top>small {
     margin: 0;
     font-size: 19px;
@@ -919,7 +1035,6 @@ th figcaption {
     height: 50px;
     width: 50px;
     z-index: 1000;
-    
 }
 
 .middle {
@@ -944,8 +1059,8 @@ th figcaption {
     margin-top: 30%;
     background-color: rgba(255, 255, 255, 0.85);
     z-index: 1000;
-
 }
+
 .container:hover+.hide {
     margin: 0;
     padding: 0;
@@ -956,11 +1071,13 @@ th figcaption {
     flex-wrap: wrap;
     text-align: left;
 }
+
 .hide>li {
     padding: 0;
     /* Προβολή σαν αντικείμενα στην σειρά */
     display: inline-block;
 }
+
 .hide>li>img {
     height: 100px;
     width: 150px;
@@ -969,6 +1086,7 @@ th figcaption {
 .container:hover .middle {
     opacity: 1;
 }
+
 .container:hover .synopsed_img {
     opacity: 0.3;
 }
@@ -977,6 +1095,7 @@ th figcaption {
     left: 50%;
     text-align: left;
 }
+
 .heading {
     width: 50%;
     text-align: left;
@@ -986,16 +1105,17 @@ th figcaption {
     margin: 0;
     padding: 0;
 }
+
 .text {
     background-color: #BEBAB7;
     color: black;
     text-decoration: none;
     padding: 12px 22px;
 }
+
 .text:hover {
     color: #EAE7DC;
 }
-
 
 .price1 {
     /* Το εκφράζουμε ως nline block για να θεωρηθεί ανεξάρτητο container το οποίο στοιχίζεται με άλλα στην ίδια γραμμή*/
@@ -1004,20 +1124,29 @@ th figcaption {
     left: 50%;
     top: 135%;
 }
+
+
 /* Μορφοποίηση κειμένου h2 */
+
 .price1>h1 {
     color: #2B4552;
     margin-bottom: 0%;
     font-size: 27px;
 }
+
+
 /* Αλλαγή της θέσης στην συγκεκριμένη περίπτωση */
+
 .price1>small {
     display: inline;
     position: relative;
     padding: 0;
     margin: 0;
 }
+
+
 /* Μορφοποίηση αναλυτικής περιγραφής */
+
 .Descr {
     /* Πιάνει όλη την γραμμή που του αντιστοιχέι από το grid layout*/
     display: block;
@@ -1029,7 +1158,9 @@ th figcaption {
     margin-bottom: 1%;
 }
 
+
 /* Μορφοποίηση τιμής */
+
 .price {
     /* Βασίζεται η θέση του στις τιμές που δίνουμε παρακάτω */
     position: relative;
@@ -1038,6 +1169,7 @@ th figcaption {
     left: 0%;
     margin: 0;
 }
+
 .price>h2 {
     font-size: 25px;
     margin-bottom: 0;
@@ -1061,6 +1193,7 @@ th figcaption {
     font-size: 13px;
     margin-bottom: 20%;
 }
+
 .synopsis div>p {
     color: black;
     text-align: justify;
@@ -1071,7 +1204,7 @@ th figcaption {
     padding: 0;
 }
 
-.more{
+.more {
     text-decoration: underline;
     color: #2B4552;
     text-align: justify;
@@ -1080,10 +1213,11 @@ th figcaption {
     margin: 0;
     padding: 0;
 }
+
 .ask-us {
     position: fixed;
-    bottom: 20px; 
-    right: 20px; 
+    bottom: 20px;
+    right: 20px;
     display: flex;
     align-items: center;
     background-color: #AAC4D2;
@@ -1093,6 +1227,7 @@ th figcaption {
     text-decoration: none;
     width: 8%;
 }
+
 .ask-us:hover {
     background-color: #46a0c4;
     color: #0a4861;
@@ -1118,7 +1253,7 @@ th figcaption {
     background-color: #056174;
     text-align: center;
     text-decoration: none;
-    display: inline-block; 
+    display: inline-block;
     margin-left: 10%;
 }
 
@@ -1132,10 +1267,7 @@ th figcaption {
     color: #76AABF;
 }
 
-
-
 .tech>section {
-    
     display: inline-table;
     top: 0;
     left: 0;
@@ -1143,14 +1275,13 @@ th figcaption {
 }
 
 aside {
-   
     background: #D6CDC5;
     height: 100%;
     width: 100%;
     margin-bottom: 2%;
     grid-area: aside;
-    
 }
+
 aside>h3 {
     font-weight: bold;
     color: black;
@@ -1170,7 +1301,6 @@ aside>h4 a {
     color: black;
     text-decoration: underline;
     text-decoration-color: black;
-
 }
 
 aside>h4 a:hover {
@@ -1199,12 +1329,13 @@ h1 {
     margin-top: 2%;
     border: 2px dotted #056174;
 }
+
 .ideal>table td {
-        padding: 10px;
-        text-align: left;
-        font-size: 18px;
-        font-weight: bold;
-    }
+    padding: 10px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+}
 
 iframe {
     /* Μέγεθος χάρτη */
@@ -1212,8 +1343,9 @@ iframe {
     height: 250px;
     margin-bottom: 10%;
     /* Για να καταναλώνει το νατικείμενο όλη την γραμμή*/
-
 }
+
+
 /* Αλλαγή αντκειμένου small για το συγκεκριμένο πλαίσιο */
 
 small {
@@ -1226,477 +1358,403 @@ small {
     color: black;
 }
 
+
 /*=================================
   ========= Tablet-Based===========
   =================================*/
+
 
 /* Στο παρακάτω media περιέχονται κανόνες για tablets.Δημιουργούμε 2 στήλες
 για την διάταξη του περιεχομένου.Οι κανόνες που ορίζονται αφορούν ένα συγκεκριμένο πλήθος 
 px.*/
 
-@media screen and (min-width:550px){
-
-body{
+@media screen and (min-width:550px) {
+    body {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-areas: 
-        "header header"
-        "nav nav"
-        "main main"
-        "footer footer"
-        ; 
-}
-.button{
-    grid-column: 1/2;
-    font-size: 22px;
-}
-.top-left{
-    left: 37%;
-}
-
-.faq_container{
-    width: 60%;
-}
-.intro>h2{
-    font-size:22px;
-} 
-.intro>p{
-    font-size: 18px;
-}
-
-.validator {
-    align-self: flex-end;
-    position: absolute;
-    right: 0;
-    bottom: 70px;
-}
-
-h2{
-    font-size:24px;
-}
-p{
-    font-size: 18px;   
-}
-.members figcaption{
-    font-size:18px;
-}
-figure img[alt="Naya_avatar"],
-img[alt="Iliana_avatar"] {
-   margin-left: 75px; 
-   height: 170px;
-   width: 170px;
-}
-
-.suggestions>h1{
-    font-size: 24px;
-
-}
-.rent article figcaption{
-    font-size: 19px;
-}
-.rent article .head_info {
-    font-size: 24px;
-}
-img[alt="attrIconStairs"],
-img[alt="attrIconBathtub"],
-img[alt="attrIconBed"] {
-    height: 30px;
-    width: 30px;
-}
-.rent .ad_comments {
-    font-size: 18px;
-}
-.rentals{
-grid-template-columns:minmax(0, 1.6fr) 0.4fr;
- display:grid;
- grid-template-areas: 
-    "header header"
-    "nav nav"
-    "main aside"
-    "footer footer"
-    ;
-}
-
-aside{
-    position: sticky;
-    grid-column: 2/2; 
-    grid-row:3/6 ;
-}
-.ask-us{
-    z-index:1000;
-}
-form{
-    grid-column: 1/3;
-}
-form h1{
-    font-size: 24px;
-}
-form label{
-    padding-left: 2%;
-
-}
-
+        grid-template-areas: "header header" "nav nav" "main main" "footer footer";
+    }
+    .button {
+        grid-column: 1/2;
+        font-size: 22px;
+    }
+    .top-left {
+        left: 37%;
+    }
+    .faq_container {
+        width: 60%;
+    }
+    .intro>h2 {
+        font-size: 22px;
+    }
+    .intro>p {
+        font-size: 18px;
+    }
+    .validator {
+        align-self: flex-end;
+        position: absolute;
+        right: 0;
+        bottom: 70px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 18px;
+    }
+    .members figcaption {
+        font-size: 18px;
+    }
+    figure img[alt="Naya_avatar"],
+    img[alt="Iliana_avatar"] {
+        margin-left: 75px;
+        height: 170px;
+        width: 170px;
+    }
+    .suggestions>h1 {
+        font-size: 24px;
+    }
+    .rent article figcaption {
+        font-size: 19px;
+    }
+    .rent article .head_info {
+        font-size: 24px;
+    }
+    img[alt="attrIconStairs"],
+    img[alt="attrIconBathtub"],
+    img[alt="attrIconBed"] {
+        height: 30px;
+        width: 30px;
+    }
+    .rent .ad_comments {
+        font-size: 18px;
+    }
+    .rentals {
+        grid-template-columns: minmax(0, 1.6fr) 0.4fr;
+        display: grid;
+        grid-template-areas: "header header" "nav nav" "main aside" "footer footer";
+    }
+    aside {
+        position: sticky;
+        grid-column: 2/2;
+        grid-row: 3/6;
+    }
+    .ask-us {
+        z-index: 1000;
+    }
+    form {
+        grid-column: 1/3;
+    }
+    form h1 {
+        font-size: 24px;
+    }
+    form label {
+        padding-left: 2%;
+    }
 }
 
 
-
-  /*=================================
+/*=================================
   ========= Computer-Based===========
   =================================*/
 
-  @media screen and (min-width:950px){
-body{
-    display: grid;
-    grid-template-columns: repeat(3,1fr) ;
-    grid-template-areas: 
-    "header header header"
-    "nav nav nav"
-    "main main main"
-    "footer footer footer"
-    ;
-}
-
-.intro{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    text-align: justify;
-    margin: 0;
-    padding-left: 10%;
-    width: 100%;
-}
-.intro>p {
-    font-weight: 500;
-    font-size: 19px;
-    /* Θέτουμε την παράγραφο ως block για να καταναλώσει όλη την γραμμή */
-    display: block;
-    margin: 5px;
-    padding: 10px 20px 10px;
-    width: 50%;
-}
-
-
-.box_categories td{
-    float: left;
-}
-
-.navbar {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    top: 30%;
-    left: 0;
-    width: 85%;
-    background: none;
-    overflow: visible;
-    transition: none;
-}
-  
-#check {
-    display: none;
-}
-  
-.menu_icons {
-    display: none;
-}
-  
-.navbar > a {
-    float: left;
-    opacity: 1;
-    margin: 0 2px; 
-    text-align: right;
-    padding: 20px 5px;
-    letter-spacing: 1px;
-    text-decoration: none;
-    font-size: 17px;
-}
-.faq_container {
-    /* Το χειριζόμαστε ως flexbox τοποθετώντας τα περιεχόμενα κατακόρυφα */
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    width: 50%;
-    border: 7px solid #0C2E3F;
-    border-radius: 10px;
-    padding: 10px 50px 150px;
-    text-align: left;
-    margin-top: 1%;
-    margin-left: 25%;
-}
-.categories img {
-    height: 270px;
-    width: 540px;
-    max-width: 100%;
-
-}
-
-form{
-    grid-column: 1/-1;
-    margin-left: 20%;
-}
-form h1{
-    font-size: 25px;
-}
-
-legend{
-    text-align: left;
-}
-#another_issue_txt{
-    width: 85%;
-}
-#issue_desc{
-    width: 90%;
-}
-.input-group input {
-    width: 85%;
-}
-
-h2 {
-    font-family: myfont, Fallback, sans-serif;
-    font-size: 27px;
-    /* Καθορίζουμε την απόσταση με το επόμενο αντικείμενο */
-    margin-bottom: 20px;
-    font-weight: bolder;
-}
-
-
-/* Μορφοποιούμε το πρώτο γράμμα της παραγράφου του "σκοπού μας" να "καταναλώνει" 2 γραμμές για 
-να είναι πιο ξεκάθαρο ότι πρόκειται για μία παράγραφο */
-
-.purpose>p::first-letter {
-    initial-letter: 2;
-}
-
-
-/*  Μορφοποιούμε τα p όλων τω σελίδων*/
-
-p {
-    /* Βάζουμε μικρότερη γραμματοσειρά */
-    font-size: 16px;
-    /* Θέτουμε όλες τις γραμμές να καταναλώνουν στο έπακρο το καθορισμένο πλάτος του αντικειμένου */
-    text-align: justify;
-    /* Όριζουμε νέα θέση του περιεχομένου του συγκεκριμένου αντικειμένου, ως προς την απόσταση δεξιά/αριστερά
-    και κάτω */
-    padding: 0px 10px 10px;
-    color: BLACK;
-    /* Καθορίζουμε το πλάτος που "καταναλώνει" το αντικειμένου σε σχέση με το πλάτος όλης της main */
-    width: 100%;
-}
-
-
-/* Διακριτοποιούμε μορφολογικά του περιεχόμενους τίτλους από τον κεντρικό της σελίδας*/
-
-.members figcaption {
-    /* Διαφορετικό μέγεθος */
-    font-size: 18px;
-    /* Διαφορετικό χρώμα */
-    
-    /* Καθορίζουμε την απόσταση από τα προγενέστερα αντικείμενα (προς τα πάνω) */
-    margin-top: 20px;
-    /* Επαναορίζουμε την τοποθέτηση των ονομάτων, διορθώνοντας την προκαθορισμένη θέση του text-align 
-    με το margin-left */
-    margin-left: 2%;
-}
-.purpose p{
-    margin-left: 1%;
-    inline-size: 1000px;
-}
-
-
-/* Αλλαγή- ουσιαστικά δημιουργούμε ένα flexbox για κάθε member*/
-
-.team div {
-    margin-left: 7%;
-    /* δηλώνουμε ως flex ώστε να στοιχίσουμε τα περιεχόμενα στοιχεία πιο συγκεκριμένα
-    π.χ. τις φωτογραφίες αριστερά του container, κτλ*/
-    display: flex;
-    /* O κύριος άξονας είναι ο οριζόντιος, σύμφωνα με αυτόν στοιχίζονται τα περιεχόμενα*/
-    flex-direction: row;
-    /* Μεταξύ των στηλών ανά γραμμή αφήνουμε ένα μικρό κενό */
-    column-gap: 2px;
-}
-
-.team div>figure {
-    /* Το αντικείμενο θα καταλαμβάνει το 10% της γραμμής*/
-    width: 20%;
-    /* Στοιχίζεται στο δεξί άκρο του flexbox */
-    align-self: flex-start;
-    /* Ορίζουμε το κενό μεταξύ των άκρων από το συνολικό χώρο που τους έχει δωθεί() */
-    padding: 0px 7px 0px;
-    /* Διάστημα μεταξύ του αντικειμένου από τα γύρω αντικείμενα*/
-    margin: 30px 30px;
-    /* Στο εσωτερικό του αντικειμένου στοιχίζουμε με βάση ένα flex container ώστε να έχουμε το figcaption
-    πάνω από την εικόνα*/
-    display: flex;
-    /* ανά στήλη ώστε να είναι τα στοιχεία στην ίδια στήλη figcaption/img*/
-    flex-direction: column;
-    /* Δηλώνουμε τον χώρο μεταξύ των γραμμών του συγκεκριμένου flexbox */
-    row-gap: 15px;
-}
-
-
-/* Αλλαγή- Επεξεργαζόμαστε τις εικόνες που αντιστοιχούν στα avatar που βρίσκονται στο εσωτερικό ενός
-αντικειμένου figure*/
-
-figure img[alt="Naya_avatar"],
-img[alt="Iliana_avatar"] {
-        
-    height: 150px;
-    width: 150px;
-    /* Μετακινούμε την εικόνα σε σχέση με το border που το περικλύει*/
-    margin-left: 0;
-}
-
-.about_us h1{
-    margin-left: 5%;
-}
-.about_us{
-    margin-bottom: 5%;
-}
-/*Επεξεργαζόμαστε τα p που συναντούμε στο εσωτερικό του section .team*/
-
-.team p {
-    /* Βάζουμε κενό μεταξύ των γραμμών του κειμένου */
-    line-height: 1;
-    /* Αλλάζουμε το πλάτος που "καταναλώνει" το αντικειμένου σε σχέση με το πλάτος που όρισε το .team div*/
-    width: 60%;
-    top:10%;
-    /* Στοιχίζεται στο δεξί άκρο του flexbox */
-    align-self:self-end;
-}
-
-.rent article table .column{
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-    "figure text"
-
-    ;
-}
-.rent article table .column figure {
-    display: flex; 
-    flex-direction: column;
-     
-
-}
-
-.rent article table .column figure img {
-    grid-area: figure;
-    flex: 1;
-    min-width: 400px; 
-    object-fit:cover; 
-    max-height: 300px;
-    
-}
-.rent article table .column .info{
-    grid-area: text;
-    font-size: 16px;
-}
-.desc{
-    padding-left: 0%;
-}
-.rent article .head_info {
-    margin-bottom: 5px; 
-    font-size: 22px;
-}
-
-img[alt="attrIconStairs"],
-img[alt="attrIconBathtub"],
-img[alt="attrIconBed"] {
-    height: 15px;
-    width: 15px;
-}
-
-.attr {
-    display: block;
-    align-items: center;
-    margin: 1%;
-    margin-left: 12%;
-}
-
-.rent .ad_comments {
-    position: relative;
-    left: 0;
-    top: 15px;
-    color: black;
-    font-size: 15px;
-    text-align: left;
-}
-
-.rent .price {
-    /* Βασίζεται η θέση του στις τιμές που δίνουμε παρακάτω */
-    position: relative;
-    bottom: 0%;
-    left: 0%;
-    margin: 0;
-}
-
-.rent .price>h2 {
-    font-size: 20px;
-    margin-bottom: 0;
-}
-
-.rent .price small {
-    position: relative;
-    text-align: left;
-    font-weight: 500;
-    font-size: 15px;
-    overflow: hidden;
-}
-.container {
-    height: auto;
-    width: 500px;
-    margin-left: auto;
-}
-
-.footer_nav{
-    width: 40%;
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    align-content: flex-end;
-    right: 2%;
-    top: 10%;
-}
-.content_wrap{
-    display: flex;    
-    gap: 20px;
-}
-.analytic .container{
-    display: flex;
-    margin-left: 2%;
-}
-.Descr{
-    margin-left: 1%;
-    inline-size: 620px;
-}
-.bckcat{
-    width: 30%;
-    margin-left: 5%;
-}
-
-.ideal {
-        
-    display: block;
-    width: 90%; 
-    max-width: 600px; 
-    margin: 2% auto; 
-    border: 2px dotted #056174;
-}
-    
-.ideal>table td {
-    padding: 2%; 
-    text-align: left;
-    font-size: 1.2em; 
-    font-weight: bold;
-}
-    
-iframe {
-    width: 50%;
-    max-width: 80%; 
-    max-height: 100%;
-    margin-bottom: 10%;
+@media screen and (min-width:950px) {
+    body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "header header header" "nav nav nav" "main main main" "footer footer footer";
     }
-
+    .intro {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        text-align: justify;
+        margin: 0;
+        padding-left: 10%;
+        width: 100%;
+    }
+    .intro>p {
+        font-weight: 500;
+        font-size: 19px;
+        /* Θέτουμε την παράγραφο ως block για να καταναλώσει όλη την γραμμή */
+        display: block;
+        margin: 5px;
+        padding: 10px 20px 10px;
+        width: 50%;
+    }
+    .box_categories td {
+        float: left;
+    }
+    .navbar {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        top: 30%;
+        left: 0;
+        width: 85%;
+        background: none;
+        overflow: visible;
+        transition: none;
+    }
+    #check {
+        display: none;
+    }
+    .menu_icons {
+        display: none;
+    }
+    .navbar>a {
+        float: left;
+        opacity: 1;
+        margin: 0 2px;
+        text-align: right;
+        padding: 20px 5px;
+        letter-spacing: 1px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    .faq_container {
+        /* Το χειριζόμαστε ως flexbox τοποθετώντας τα περιεχόμενα κατακόρυφα */
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: 50%;
+        border: 7px solid #0C2E3F;
+        border-radius: 10px;
+        padding: 10px 50px 150px;
+        text-align: left;
+        margin-top: 1%;
+        margin-left: 25%;
+    }
+    .categories img {
+        height: 270px;
+        width: 540px;
+        max-width: 100%;
+    }
+    form {
+        grid-column: 1/-1;
+        margin-left: 20%;
+    }
+    form h1 {
+        font-size: 25px;
+    }
+    legend {
+        text-align: left;
+    }
+    #another_issue_txt {
+        width: 85%;
+    }
+    #issue_desc {
+        width: 90%;
+    }
+    .input-group input {
+        width: 85%;
+    }
+    h2 {
+        font-family: myfont, Fallback, sans-serif;
+        font-size: 27px;
+        /* Καθορίζουμε την απόσταση με το επόμενο αντικείμενο */
+        margin-bottom: 20px;
+        font-weight: bolder;
+    }
+    /* Μορφοποιούμε το πρώτο γράμμα της παραγράφου του "σκοπού μας" να "καταναλώνει" 2 γραμμές για 
+να είναι πιο ξεκάθαρο ότι πρόκειται για μία παράγραφο */
+    .purpose>p::first-letter {
+        initial-letter: 2;
+    }
+    /*  Μορφοποιούμε τα p όλων τω σελίδων*/
+    p {
+        /* Βάζουμε μικρότερη γραμματοσειρά */
+        font-size: 16px;
+        /* Θέτουμε όλες τις γραμμές να καταναλώνουν στο έπακρο το καθορισμένο πλάτος του αντικειμένου */
+        text-align: justify;
+        /* Όριζουμε νέα θέση του περιεχομένου του συγκεκριμένου αντικειμένου, ως προς την απόσταση δεξιά/αριστερά
+    και κάτω */
+        padding: 0px 10px 10px;
+        color: BLACK;
+        /* Καθορίζουμε το πλάτος που "καταναλώνει" το αντικειμένου σε σχέση με το πλάτος όλης της main */
+        width: 100%;
+    }
+    /* Διακριτοποιούμε μορφολογικά του περιεχόμενους τίτλους από τον κεντρικό της σελίδας*/
+    .members figcaption {
+        /* Διαφορετικό μέγεθος */
+        font-size: 18px;
+        /* Διαφορετικό χρώμα */
+        /* Καθορίζουμε την απόσταση από τα προγενέστερα αντικείμενα (προς τα πάνω) */
+        margin-top: 20px;
+        /* Επαναορίζουμε την τοποθέτηση των ονομάτων, διορθώνοντας την προκαθορισμένη θέση του text-align 
+    με το margin-left */
+        margin-left: 2%;
+    }
+    .purpose p {
+        margin-left: 1%;
+        inline-size: 1000px;
+    }
+    /* Αλλαγή- ουσιαστικά δημιουργούμε ένα flexbox για κάθε member*/
+    .team div {
+        margin-left: 7%;
+        /* δηλώνουμε ως flex ώστε να στοιχίσουμε τα περιεχόμενα στοιχεία πιο συγκεκριμένα
+    π.χ. τις φωτογραφίες αριστερά του container, κτλ*/
+        display: flex;
+        /* O κύριος άξονας είναι ο οριζόντιος, σύμφωνα με αυτόν στοιχίζονται τα περιεχόμενα*/
+        flex-direction: row;
+        /* Μεταξύ των στηλών ανά γραμμή αφήνουμε ένα μικρό κενό */
+        column-gap: 2px;
+    }
+    .team div>figure {
+        /* Το αντικείμενο θα καταλαμβάνει το 10% της γραμμής*/
+        width: 20%;
+        /* Στοιχίζεται στο δεξί άκρο του flexbox */
+        align-self: flex-start;
+        /* Ορίζουμε το κενό μεταξύ των άκρων από το συνολικό χώρο που τους έχει δωθεί() */
+        padding: 0px 7px 0px;
+        /* Διάστημα μεταξύ του αντικειμένου από τα γύρω αντικείμενα*/
+        margin: 30px 30px;
+        /* Στο εσωτερικό του αντικειμένου στοιχίζουμε με βάση ένα flex container ώστε να έχουμε το figcaption
+    πάνω από την εικόνα*/
+        display: flex;
+        /* ανά στήλη ώστε να είναι τα στοιχεία στην ίδια στήλη figcaption/img*/
+        flex-direction: column;
+        /* Δηλώνουμε τον χώρο μεταξύ των γραμμών του συγκεκριμένου flexbox */
+        row-gap: 15px;
+    }
+    /* Αλλαγή- Επεξεργαζόμαστε τις εικόνες που αντιστοιχούν στα avatar που βρίσκονται στο εσωτερικό ενός
+αντικειμένου figure*/
+    figure img[alt="Naya_avatar"],
+    img[alt="Iliana_avatar"] {
+        height: 150px;
+        width: 150px;
+        /* Μετακινούμε την εικόνα σε σχέση με το border που το περικλύει*/
+        margin-left: 0;
+    }
+    .about_us h1 {
+        margin-left: 5%;
+    }
+    .about_us {
+        margin-bottom: 5%;
+    }
+    /*Επεξεργαζόμαστε τα p που συναντούμε στο εσωτερικό του section .team*/
+    .team p {
+        /* Βάζουμε κενό μεταξύ των γραμμών του κειμένου */
+        line-height: 1;
+        /* Αλλάζουμε το πλάτος που "καταναλώνει" το αντικειμένου σε σχέση με το πλάτος που όρισε το .team div*/
+        width: 60%;
+        top: 10%;
+        /* Στοιχίζεται στο δεξί άκρο του flexbox */
+        align-self: self-end;
+    }
+    .rent article table .column {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-areas: "figure text";
+    }
+    .rent article table .column figure {
+        display: flex;
+        flex-direction: column;
+    }
+    .rent article table .column figure img {
+        grid-area: figure;
+        flex: 1;
+        min-width: 400px;
+        object-fit: cover;
+        max-height: 300px;
+    }
+    .rent article table .column .info {
+        grid-area: text;
+        font-size: 16px;
+    }
+    .desc {
+        padding-left: 0%;
+    }
+    .rent article .head_info {
+        margin-bottom: 5px;
+        font-size: 22px;
+    }
+    img[alt="attrIconStairs"],
+    img[alt="attrIconBathtub"],
+    img[alt="attrIconBed"] {
+        height: 15px;
+        width: 15px;
+    }
+    .attr {
+        display: block;
+        align-items: center;
+        margin: 1%;
+        margin-left: 12%;
+    }
+    .rent .ad_comments {
+        position: relative;
+        left: 0;
+        top: 15px;
+        color: black;
+        font-size: 15px;
+        text-align: left;
+    }
+    .rent .price {
+        /* Βασίζεται η θέση του στις τιμές που δίνουμε παρακάτω */
+        position: relative;
+        bottom: 0%;
+        left: 0%;
+        margin: 0;
+    }
+    .rent .price>h2 {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+    .rent .price small {
+        position: relative;
+        text-align: left;
+        font-weight: 500;
+        font-size: 15px;
+        overflow: hidden;
+    }
+    .container {
+        height: auto;
+        width: 500px;
+        margin-left: auto;
+    }
+    .footer_nav {
+        width: 40%;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        align-content: flex-end;
+        right: 2%;
+        top: 10%;
+    }
+    .content_wrap {
+        display: flex;
+        gap: 20px;
+    }
+    .analytic .container {
+        display: flex;
+        margin-left: 2%;
+    }
+    .Descr {
+        margin-left: 1%;
+        inline-size: 620px;
+    }
+    .bckcat {
+        width: 30%;
+        margin-left: 5%;
+    }
+    .ideal {
+        display: block;
+        width: 90%;
+        max-width: 600px;
+        margin: 2% auto;
+        border: 2px dotted #056174;
+    }
+    .ideal>table td {
+        padding: 2%;
+        text-align: left;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    iframe {
+        width: 50%;
+        max-width: 80%;
+        max-height: 100%;
+        margin-bottom: 10%;
+    }
 }
